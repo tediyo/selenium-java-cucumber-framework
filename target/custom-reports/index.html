@@ -152,8 +152,8 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
   <div class="hi">
     <div class="brand"><span class="bicon">⬡</span><span class="bname">TestFM</span><span class="bsub">Test Report</span></div>
     <div class="hmeta">
-      <span class="obadge passed">PASSED</span>
-      <span class="rdate">🕒 01 Apr 2026, 19:30:01</span>
+      <span class="obadge failed">FAILED</span>
+      <span class="rdate">🕒 02 Apr 2026, 18:26:40</span>
       <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
         <span class="theme-btn-inner" id="themeBtnContent">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
@@ -166,20 +166,20 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
 <main>
 <section class="summary">
 <div class="card sc sc-total"><div class="scn">1</div><div class="scl">Total</div></div>
-<div class="card sc sc-pass"><div class="scn">1</div><div class="scl">Passed</div></div>
-<div class="card sc sc-fail"><div class="scn">0</div><div class="scl">Failed</div></div>
+<div class="card sc sc-pass"><div class="scn">0</div><div class="scl">Passed</div></div>
+<div class="card sc sc-fail"><div class="scn">1</div><div class="scl">Failed</div></div>
 <div class="card sc sc-skip"><div class="scn">0</div><div class="scl">Skipped</div></div>
-<div class="card sc sc-dur"><div class="scn">26s</div><div class="scl">Duration</div></div>
+<div class="card sc sc-dur"><div class="scn">37s</div><div class="scl">Duration</div></div>
 </section>
 <section class="chartrow">
   <div class="card ccard">
     <div class="cwrap">
       <canvas id="donut" width="200" height="200"></canvas>
-      <div class="ccenter"><span class="cpct">100%</span><span class="clbl">Pass Rate</span></div>
+      <div class="ccenter"><span class="cpct">0%</span><span class="clbl">Pass Rate</span></div>
     </div>
     <div class="cleg">
-      <span class="ldot ld-p"></span><span>Passed (1)</span>
-      <span class="ldot ld-f"></span><span>Failed (0)</span>
+      <span class="ldot ld-p"></span><span>Passed (0)</span>
+      <span class="ldot ld-f"></span><span>Failed (1)</span>
       <span class="ldot ld-s"></span><span>Skipped (0)</span>
     </div>
   </div>
@@ -198,18 +198,19 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
     <span class="ficon">📋</span>
     <span class="fname">GoogleSearch</span>
     <div class="fbadges">
-      <span class="badge bpass">✔ 1</span>
-      <span class="fst passed">PASSED</span>
+      <span class="badge bpass">✔ 0</span>
+      <span class="badge bfail">✖ 1</span>
+      <span class="fst failed">FAILED</span>
     </div>
   </div>
   <div class="sw" id="fw0">
 <div class="scenario" id="s0_0" data-tags="@smoke,@search" data-name="search for selenium on google">
   <div class="sh" onclick="toggleS('s0_0')">
     <span class="stog" id="sts0_0">▶</span>
-    <span class="sico passed">✔</span>
+    <span class="sico failed">✖</span>
     <span class="sname">Search for Selenium on Google</span>
-    <div class="smeta"><span class="stag">@smoke</span><span class="stag">@search</span>      <span class="sdur">⏱ 26.6s</span>
-      <span class="sst passed">PASSED</span>
+    <div class="smeta"><span class="stag">@smoke</span><span class="stag">@search</span>      <span class="sdur">⏱ 37.6s</span>
+      <span class="sst failed">FAILED</span>
     </div>
   </div>
   <div class="stepsw" id="sws0_0" style="display:none">
@@ -218,34 +219,39 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
     <span class="stico passed">✔</span>
     <span class="stkw">Given</span>
     <span class="sttxt">I open the Google homepage</span>
-    <span class="stdr perf-slow">⏱ 2.6s</span>
+    <span class="stdr perf-slow">⏱ 2.2s</span>
   </div>
-  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:12%"></div></div>
+  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:6%"></div></div>
 </div>
 <div class="step passed">
   <div class="step-row">
     <span class="stico passed">✔</span>
     <span class="stkw">When</span>
     <span class="sttxt">I search for &quot;Selenium WebDriver&quot;</span>
-    <span class="stdr perf-fast">⏱ 391ms</span>
+    <span class="stdr perf-fast">⏱ 470ms</span>
   </div>
   <div class="stbar-wrap"><div class="stbar perf-fast" style="width:1%"></div></div>
 </div>
-<div class="step passed">
+<div class="step failed">
   <div class="step-row">
-    <span class="stico passed">✔</span>
+    <span class="stico failed">✖</span>
     <span class="stkw">Then</span>
     <span class="sttxt">the page title should contain &quot;Selenium WebDriver&quot;</span>
-    <span class="stdr perf-slow">⏱ 21.7s</span>
+    <span class="stdr perf-slow">⏱ 31.6s</span>
   </div>
   <div class="stbar-wrap"><div class="stbar perf-slow" style="width:100%"></div></div>
+  <div class="sterr"><pre>Expected condition failed: waiting for visibility of element located by By.id: search (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: &#39;4.27.0&#39;, revision: &#39;d6e718d134&#39;
+System info: os.name: &#39;Windows 11&#39;, os.arch: &#39;amd64&#39;, os.version: &#39;10.0&#39;, java.version: &#39;21.0.8&#39;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: Mic…</pre></div>
 </div>
-<div class="step passed">
+<div class="step skipped">
   <div class="step-row">
-    <span class="stico passed">✔</span>
+    <span class="stico skipped">○</span>
     <span class="stkw">And</span>
     <span class="sttxt">search results should be displayed</span>
-    <span class="stdr perf-fast">⏱ 119ms</span>
+    <span class="stdr perf-fast">⏱ 1ms</span>
   </div>
   <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
 </div>
@@ -255,10 +261,10 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
 </div>
 </section>
 </main>
-<footer><span>Generated by TestFM Custom Reporter&nbsp;•&nbsp;01 Apr 2026, 19:30:01</span></footer>
+<footer><span>Generated by TestFM Custom Reporter&nbsp;•&nbsp;02 Apr 2026, 18:26:40</span></footer>
 <script>
 const ctx=document.getElementById('donut').getContext('2d');
-new Chart(ctx,{type:'doughnut',data:{datasets:[{data:[1,0,0],backgroundColor:['#22c55e','#ef4444','#f59e0b'],borderColor:['#16a34a','#dc2626','#d97706'],borderWidth:2,hoverOffset:10}]},options:{cutout:'74%',plugins:{legend:{display:false}},animation:{animateScale:true,duration:900}}});
+new Chart(ctx,{type:'doughnut',data:{datasets:[{data:[0,1,0],backgroundColor:['#22c55e','#ef4444','#f59e0b'],borderColor:['#16a34a','#dc2626','#d97706'],borderWidth:2,hoverOffset:10}]},options:{cutout:'74%',plugins:{legend:{display:false}},animation:{animateScale:true,duration:900}}});
 
 var MOON_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>';
 var SUN_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';
