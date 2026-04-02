@@ -14,9 +14,9 @@ import java.util.*;
  * Generates a beautiful, self-contained interactive HTML report at the given path.
  *
  * Registered in CucumberRunnerTest as:
- *   com.testfm.reporter.CustomHtmlReporter:target/custom-reports/index.html
+ *   com.testfm.reporter.CustomHtmlReporter:target/custom-reports
  *
- * Output: target/custom-reports/index.html
+ * Output: target/custom-reports/{FeatureName}_Report.html
  */
 public class CustomHtmlReporter implements EventListener {
 
@@ -114,17 +114,10 @@ public class CustomHtmlReporter implements EventListener {
 
     private void generate() {
         try {
-            Path out = Paths.get(outputPath);
-            Files.createDirectories(out.getParent());
-
-            int total = 0, passed = 0, failed = 0, skipped = 0;
-            for (FeatureData f : features)
-                for (ScenarioData s : f.scenarios) {
-                    total++;
-                    if ("PASSED".equals(s.status))       passed++;
-                    else if ("FAILED".equals(s.status))  failed++;
-                    else                                  skipped++;
-                }
+            Path configured = Paths.get(outputPath);
+            Path outDir = isHtmlFile(configured) ? configured.getParent() : configured;
+            if (outDir == null) outDir = Paths.get("target", "custom-reports");
+            Files.createDirectories(outDir);
 
             long   ms   = runEnd != null && runStart != null
                           ? Duration.between(runStart, runEnd).toMillis() : 0;
@@ -132,20 +125,34 @@ public class CustomHtmlReporter implements EventListener {
                           .ofPattern("dd MMM yyyy, HH:mm:ss", Locale.ENGLISH)
                           .format(LocalDateTime.now());
 
-            Set<String> allTags = new LinkedHashSet<>();
-            for (FeatureData f : features)
-                for (ScenarioData s : f.scenarios)
-                    allTags.addAll(s.tags);
+            List<Path> generated = new ArrayList<>();
+            for (FeatureData f : features) {
+                FeatureData filtered = filterExecutedScenarios(f);
+                if (filtered.scenarios.isEmpty()) continue; // don't generate reports for fully-skipped features
 
-            Files.writeString(out, buildHtml(total, passed, failed, skipped, ms, date, allTags));
+                Path outFile = outDir.resolve(fileSafeName(displayName(filtered.name)) + "_Report.html");
+                Files.writeString(outFile, buildHtmlForFeature(filtered, ms, date));
+                generated.add(outFile);
+            }
 
             String sep = "═".repeat(50);
             System.out.println("\n\033[1;96m╔" + sep + "╗\033[0m");
             System.out.println("\033[1;96m║\033[0m  \uD83D\uDCCA  Custom HTML Report Generated" + " ".repeat(18) + "\033[1;96m║\033[0m");
             System.out.println("\033[1;96m╠" + sep + "╣\033[0m");
-            System.out.printf( "\033[1;96m║\033[0m  \uD83D\uDCC1  %-46s\033[1;96m║\033[0m%n",
-                               out.toAbsolutePath());
+            if (generated.isEmpty()) {
+                System.out.printf("\033[1;96m║\033[0m  \uD83D\uDCC1  %-46s\033[1;96m║\033[0m%n",
+                        outDir.toAbsolutePath());
+            } else {
+                // Print the first file path in the fancy box
+                System.out.printf("\033[1;96m║\033[0m  \uD83D\uDCC1  %-46s\033[1;96m║\033[0m%n",
+                        generated.get(0).toAbsolutePath());
+            }
             System.out.println("\033[1;96m╚" + sep + "╝\033[0m\n");
+            if (generated.size() > 1) {
+                for (int i = 1; i < generated.size(); i++) {
+                    System.out.println("[CustomHtmlReporter] Also generated: " + generated.get(i).toAbsolutePath());
+                }
+            }
 
         } catch (IOException ex) {
             System.err.println("[CustomHtmlReporter] ERROR: " + ex.getMessage());
@@ -154,17 +161,22 @@ public class CustomHtmlReporter implements EventListener {
 
     // ── HTML builder ─────────────────────────────────────────────────────────────
 
-    private String buildHtml(int total, int passed, int failed, int skipped,
-                             long ms, String date, Set<String> allTags) {
+    private String buildHtmlForFeature(FeatureData feature, long ms, String date) {
+        int total = 0, passed = 0, failed = 0, skipped = 0;
+        Set<String> allTags = new LinkedHashSet<>();
+        for (ScenarioData s : feature.scenarios) {
+            total++;
+            if ("PASSED".equals(s.status))       passed++;
+            else if ("FAILED".equals(s.status))  failed++;
+            else                                  skipped++;
+            allTags.addAll(s.tags);
+        }
 
         String overall  = failed > 0 ? "FAILED" : "PASSED";
         String passRate = total > 0
                           ? String.format("%.0f", passed * 100.0 / total) : "0";
 
-        // ── features HTML ──────────────────────────────────────────────────────
-        StringBuilder featuresHtml = new StringBuilder();
-        for (int fi = 0; fi < features.size(); fi++)
-            featuresHtml.append(featureBlock(features.get(fi), fi));
+        String featuresHtml = featureBlock(feature, 0);
 
         // ── tag filter buttons ─────────────────────────────────────────────────
         StringBuilder tagBtns = new StringBuilder();
@@ -176,7 +188,7 @@ public class CustomHtmlReporter implements EventListener {
         return "<!DOCTYPE html>\n<html lang=\"en\" data-theme=\"dark\">\n<head>\n"
             + "<meta charset=\"UTF-8\">\n"
             + "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n"
-            + "<title>TestFM – Test Report</title>\n"
+            + "<title>" + esc(displayName(feature.name)) + " Report</title>\n"
             + "<script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js\"></script>\n"
             + "<style>\n" + CSS + "\n</style>\n"
             + "</head>\n<body>\n"
@@ -185,7 +197,7 @@ public class CustomHtmlReporter implements EventListener {
             + "<header>\n"
             + "  <div class=\"hi\">\n"
             + "    <div class=\"brand\"><span class=\"bicon\">⬡</span>"
-            + "<span class=\"bname\">TestFM</span><span class=\"bsub\">Test Report</span></div>\n"
+            + "<span class=\"bname\">" + esc(displayName(feature.name)) + "</span><span class=\"bsub\">Report</span></div>\n"
             + "    <div class=\"hmeta\">\n"
             + "      <span class=\"obadge " + overall.toLowerCase() + "\">" + overall + "</span>\n"
             + "      <span class=\"rdate\">🕒 " + date + "</span>\n"
@@ -403,19 +415,7 @@ public class CustomHtmlReporter implements EventListener {
       + "<path d=\"M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z\"/></svg>\n";
 
     /** Sun icon – shown when in light mode (click → switch to dark) */
-    private static final String ICON_SUN_SVG =
-        "          <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" "
-      + "stroke-linecap=\"round\" stroke-linejoin=\"round\">"
-      + "<circle cx=\"12\" cy=\"12\" r=\"5\"/>"
-      + "<line x1=\"12\" y1=\"1\" x2=\"12\" y2=\"3\"/>"
-      + "<line x1=\"12\" y1=\"21\" x2=\"12\" y2=\"23\"/>"
-      + "<line x1=\"4.22\" y1=\"4.22\" x2=\"5.64\" y2=\"5.64\"/>"
-      + "<line x1=\"18.36\" y1=\"18.36\" x2=\"19.78\" y2=\"19.78\"/>"
-      + "<line x1=\"1\" y1=\"12\" x2=\"3\" y2=\"12\"/>"
-      + "<line x1=\"21\" y1=\"12\" x2=\"23\" y2=\"12\"/>"
-      + "<line x1=\"4.22\" y1=\"19.78\" x2=\"5.64\" y2=\"18.36\"/>"
-      + "<line x1=\"18.36\" y1=\"5.64\" x2=\"19.78\" y2=\"4.22\"/>"
-      + "</svg>\n";
+    // (Not used directly; JS-safe version below is used for the toggle button)
 
     /** JS-safe versions (single-quoted strings for innerHTML injection) */
     private static final String ICON_MOON_JS =
@@ -633,9 +633,36 @@ public class CustomHtmlReporter implements EventListener {
 
     // ── Utilities ─────────────────────────────────────────────────────────────
 
+    private boolean isHtmlFile(Path p) {
+        if (p == null) return false;
+        String s = p.toString().toLowerCase(Locale.ROOT);
+        return s.endsWith(".html") || s.endsWith(".htm");
+    }
+
+    private String fileSafeName(String s) {
+        if (s == null) return "Report";
+        // Windows reserved chars: \ / : * ? " < > |
+        String cleaned = s.replaceAll("[\\\\/:*?\"<>|]+", "_").trim();
+        if (cleaned.isBlank()) return "Report";
+        return cleaned;
+    }
+
     private String baseName(String uri) {
         String[] p = uri.split("[/\\\\]");
         return p[p.length - 1].replace(".feature", "");
+    }
+
+    private FeatureData filterExecutedScenarios(FeatureData f) {
+        FeatureData out = new FeatureData();
+        out.name = f.name;
+        out.uri = f.uri;
+        for (ScenarioData s : f.scenarios) {
+            // When running with tag filters, non-matching scenarios can appear as skipped.
+            if (s.status == null) continue;
+            if ("SKIPPED".equalsIgnoreCase(s.status)) continue;
+            out.scenarios.add(s);
+        }
+        return out;
     }
 
     private String displayName(String n) {
