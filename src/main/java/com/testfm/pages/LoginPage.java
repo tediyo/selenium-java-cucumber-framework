@@ -89,4 +89,19 @@ public class LoginPage {
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
+
+    /**
+     * Wait after landing on the dashboard (successful login).
+     */
+    public void waitAfterSuccessfulLogin() {
+        pauseSeconds(1);
+    }
+
+    private static void pauseSeconds(long seconds) {
+        try {
+            Thread.sleep(Duration.ofSeconds(seconds).toMillis());
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
 }

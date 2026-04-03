@@ -1,5 +1,6 @@
 package com.testfm.driver;
 
+import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -31,6 +32,9 @@ public class DriverManager {
         System.setProperty("webdriver.edge.driver", driverPath);
 
         EdgeOptions options = new EdgeOptions();
+
+        // Finish navigation at DOMContentLoaded — avoids renderer timeouts on heavy homepages.
+        options.setPageLoadStrategy(PageLoadStrategy.EAGER);
 
            // ✅ SSL BYPASS (THIS IS THE FIX)
           options.setAcceptInsecureCerts(true);

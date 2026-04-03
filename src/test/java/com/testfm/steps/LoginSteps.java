@@ -57,6 +57,7 @@ public class LoginSteps {
                 + loginPage.getCurrentUrl()
         );
 
-    
+        loginPage.waitAfterSuccessfulLogin();
+        System.out.println("[Step] Waited 15s after successful login.");
     }
 }
