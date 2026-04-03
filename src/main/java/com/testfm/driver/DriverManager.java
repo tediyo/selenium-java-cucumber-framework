@@ -31,6 +31,11 @@ public class DriverManager {
         System.setProperty("webdriver.edge.driver", driverPath);
 
         EdgeOptions options = new EdgeOptions();
+
+           // ✅ SSL BYPASS (THIS IS THE FIX)
+          options.setAcceptInsecureCerts(true);
+          options.addArguments("--ignore-certificate-errors");
+
         // Uncomment the line below to run tests headlessly (no visible browser window)
         // options.addArguments("--headless");
         options.addArguments("--start-maximized");
