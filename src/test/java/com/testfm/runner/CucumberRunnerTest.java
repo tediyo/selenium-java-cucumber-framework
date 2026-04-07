@@ -17,11 +17,9 @@ import static io.cucumber.junit.platform.engine.Constants.*;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,
-        value = "pretty, html:target/cucumber-reports/report.html, json:target/cucumber-reports/report.json, com.testfm.reporter.CustomHtmlReporter:target/custom-reports/index.html")
+        value = "pretty, html:target/cucumber-reports/report.html, json:target/cucumber-reports/report.json, com.testfm.reporter.CustomHtmlReporter:target/custom-reports")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME,
         value = "com.testfm.steps, com.testfm.hooks")
-@ConfigurationParameter(key = FILTER_TAGS_PROPERTY_NAME,
-        value = "not @ignore")
 @ConfigurationParameter(key = EXECUTION_DRY_RUN_PROPERTY_NAME,
         value = "false")
 public class CucumberRunnerTest {

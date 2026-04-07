@@ -1,7 +1,7 @@
 com\testfm\reporter\CustomHtmlReporter$FeatureData.class
-com\testfm\reporter\CustomHtmlReporter$StepData.class
 com\testfm\reporter\CustomHtmlReporter.class
 com\testfm\hooks\Hooks.class
 com\testfm\steps\GoogleSearchSteps.class
+com\testfm\reporter\CustomHtmlReporter$StepData.class
 com\testfm\reporter\CustomHtmlReporter$ScenarioData.class
 com\testfm\runner\CucumberRunnerTest.class

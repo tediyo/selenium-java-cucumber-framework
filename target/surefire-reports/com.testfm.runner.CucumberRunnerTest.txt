@@ -1,18 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.testfm.runner.CucumberRunnerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 38.28 s <<< FAILURE! -- in com.testfm.runner.CucumberRunnerTest
-Google Search.Search for Selenium on Google -- Time elapsed: 37.66 s <<< ERROR!
-org.openqa.selenium.TimeoutException: 
-Expected condition failed: waiting for visibility of element located by By.id: search (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '4.27.0', revision: 'd6e718d134'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.8'
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 146.0.3856.84, fedcm:accounts: true, goog:processID: 26852, ms:edgeOptions: {debuggerAddress: localhost:53520}, msedge: {msedgedriverVersion: 146.0.3856.84 (fe100ed2d0fb..., userDataDir: C:\Users\Thedr\AppData\Loca...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53520/devtoo..., se:cdpVersion: 146.0.3856.84, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 398faef213a253ede3ecbad9daf6dd8c
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.testfm.pages.GoogleSearchPage.getPageTitle(GoogleSearchPage.java:54)
-	at com.testfm.steps.GoogleSearchSteps.thePageTitleShouldContain(GoogleSearchSteps.java:36)
-	at ✽.the page title should contain "Selenium WebDriver"(classpath:features/GoogleSearch.feature:11)
-
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 13.15 s -- in com.testfm.runner.CucumberRunnerTest
