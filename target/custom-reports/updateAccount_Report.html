@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Login Report</title>
+<title>updateAccount Report</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -150,10 +150,10 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
 <body>
 <header>
   <div class="hi">
-    <div class="brand"><span class="bicon">⬡</span><span class="bname">Login</span><span class="bsub">Report</span></div>
+    <div class="brand"><span class="bicon">⬡</span><span class="bname">updateAccount</span><span class="bsub">Report</span></div>
     <div class="hmeta">
-      <span class="obadge failed">FAILED</span>
-      <span class="rdate">🕒 08 Apr 2026, 22:24:26</span>
+      <span class="obadge passed">PASSED</span>
+      <span class="rdate">🕒 08 Apr 2026, 23:52:33</span>
       <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
         <span class="theme-btn-inner" id="themeBtnContent">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
@@ -166,20 +166,20 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
 <main>
 <section class="summary">
 <div class="card sc sc-total"><div class="scn">1</div><div class="scl">Total</div></div>
-<div class="card sc sc-pass"><div class="scn">0</div><div class="scl">Passed</div></div>
-<div class="card sc sc-fail"><div class="scn">1</div><div class="scl">Failed</div></div>
+<div class="card sc sc-pass"><div class="scn">1</div><div class="scl">Passed</div></div>
+<div class="card sc sc-fail"><div class="scn">0</div><div class="scl">Failed</div></div>
 <div class="card sc sc-skip"><div class="scn">0</div><div class="scl">Skipped</div></div>
-<div class="card sc sc-dur"><div class="scn">1m 34s</div><div class="scl">Duration</div></div>
+<div class="card sc sc-dur"><div class="scn">1m 8s</div><div class="scl">Duration</div></div>
 </section>
 <section class="chartrow">
   <div class="card ccard">
     <div class="cwrap">
       <canvas id="donut" width="200" height="200"></canvas>
-      <div class="ccenter"><span class="cpct">0%</span><span class="clbl">Pass Rate</span></div>
+      <div class="ccenter"><span class="cpct">100%</span><span class="clbl">Pass Rate</span></div>
     </div>
     <div class="cleg">
-      <span class="ldot ld-p"></span><span>Passed (0)</span>
-      <span class="ldot ld-f"></span><span>Failed (1)</span>
+      <span class="ldot ld-p"></span><span>Passed (1)</span>
+      <span class="ldot ld-f"></span><span>Failed (0)</span>
       <span class="ldot ld-s"></span><span>Skipped (0)</span>
     </div>
   </div>
@@ -195,21 +195,20 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
   <div class="fh" onclick="toggleF(0)">
     <span class="ftog" id="ft0">▼</span>
     <span class="ficon">📋</span>
-    <span class="fname">Login</span>
+    <span class="fname">updateAccount</span>
     <div class="fbadges">
-      <span class="badge bpass">✔ 0</span>
-      <span class="badge bfail">✖ 1</span>
-      <span class="fst failed">FAILED</span>
+      <span class="badge bpass">✔ 1</span>
+      <span class="fst passed">PASSED</span>
     </div>
   </div>
   <div class="sw" id="fw0">
 <div class="scenario" id="s0_0" data-tags="@updateAccount" data-name="update account interests, personal info, and additional details">
   <div class="sh" onclick="toggleS('s0_0')">
     <span class="stog" id="sts0_0">▶</span>
-    <span class="sico failed">✖</span>
+    <span class="sico passed">✔</span>
     <span class="sname">Update account interests, personal info, and additional details</span>
-    <div class="smeta"><span class="stag">@updateAccount</span>      <span class="sdur">⏱ 93.8s</span>
-      <span class="sst failed">FAILED</span>
+    <div class="smeta"><span class="stag">@updateAccount</span>      <span class="sdur">⏱ 68.6s</span>
+      <span class="sst passed">PASSED</span>
     </div>
   </div>
   <div class="stepsw" id="sws0_0" style="display:none">
@@ -218,16 +217,151 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
     <span class="stico passed">✔</span>
     <span class="stkw">Given</span>
     <span class="sttxt">I navigate to the New York Cares login page</span>
-    <span class="stdr perf-slow">⏱ 31.5s</span>
+    <span class="stdr perf-slow">⏱ 4.2s</span>
   </div>
-  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:52%"></div></div>
+  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:41%"></div></div>
 </div>
 <div class="step passed">
   <div class="step-row">
     <span class="stico passed">✔</span>
     <span class="stkw">When</span>
     <span class="sttxt">I enter the username &quot;abel.wondwosen+test@newyorkcares.org&quot;</span>
-    <span class="stdr perf-fast">⏱ 305ms</span>
+    <span class="stdr perf-fast">⏱ 266ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I enter the password &quot;Habesha#12&quot;</span>
+    <span class="stdr perf-fast">⏱ 262ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I click the Login button</span>
+    <span class="stdr perf-slow">⏱ 7.5s</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:74%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">Then</span>
+    <span class="sttxt">I should be logged in successfully and redirected to the dashboard page</span>
+    <span class="stdr perf-med">⏱ 1.0s</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-med" style="width:10%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I click Profile Section</span>
+    <span class="stdr perf-fast">⏱ 228ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I click My Account button</span>
+    <span class="stdr perf-slow">⏱ 10.1s</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:100%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I click Interests Section</span>
+    <span class="stdr perf-fast">⏱ 235ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I check Career Prep</span>
+    <span class="stdr perf-fast">⏱ 228ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I click Save Interests button</span>
+    <span class="stdr perf-fast">⏱ 239ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">Then</span>
+    <span class="sttxt">Career Prep should be checked</span>
+    <span class="stdr perf-fast">⏱ 212ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I go to Personal Section</span>
+    <span class="stdr perf-fast">⏱ 262ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I update phone number to &quot;323-666-8755&quot;</span>
+    <span class="stdr perf-fast">⏱ 259ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I click Save Update button in Personal Section</span>
+    <span class="stdr perf-fast">⏱ 271ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">Then</span>
+    <span class="sttxt">I should see personal update success message</span>
+    <span class="stdr perf-slow">⏱ 2.8s</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:28%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I go to Additional Section</span>
+    <span class="stdr perf-fast">⏱ 221ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I select Male gender</span>
+    <span class="stdr perf-fast">⏱ 100ms</span>
   </div>
   <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
 </div>
@@ -235,160 +369,19 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
   <div class="step-row">
     <span class="stico passed">✔</span>
     <span class="stkw">And</span>
-    <span class="sttxt">I enter the password &quot;Habesha#12&quot;</span>
-    <span class="stdr perf-fast">⏱ 281ms</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step failed">
-  <div class="step-row">
-    <span class="stico failed">✖</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I click the Login button</span>
-    <span class="stdr perf-slow">⏱ 60.2s</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:100%"></div></div>
-  <div class="sterr"><pre>timeout: Timed out receiving message from renderer: 60.000
-  (Session info: MicrosoftEdge=146.0.3856.97)
-Build info: version: &#39;4.27.0&#39;, revision: &#39;d6e718d134&#39;
-System info: os.name: &#39;Windows 11&#39;, os.arch: &#39;amd64&#39;, os.version: &#39;10.0&#39;, java.version: &#39;21.0.8&#39;
-Driver info: org.openqa.selenium.edge.EdgeDriver
-Command: [d17ff5ac2060f732b89e99b4d6c32a24, clickElement {id=f.B14D6F07FAB00ACB074D56623DD48915…</pre></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">Then</span>
-    <span class="sttxt">I should be logged in successfully and redirected to the dashboard page</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I click Profile Section</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I click My Account button</span>
-    <span class="stdr perf-fast">⏱ 1ms</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I click Interests Section</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I check Career Prep</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I click Save Interests button</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">Then</span>
-    <span class="sttxt">Career Prep should be checked</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I go to Personal Section</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I update phone number to &quot;323-666-8755&quot;</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I click Save Update button in Personal Section</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">Then</span>
-    <span class="sttxt">I should see personal update success message</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I go to Additional Section</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I select Male gender</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
-</div>
-<div class="step skipped">
-  <div class="step-row">
-    <span class="stico skipped">○</span>
-    <span class="stkw">And</span>
     <span class="sttxt">I click Save Update button in Additional Section</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
+    <span class="stdr perf-fast">⏱ 231ms</span>
   </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:2%"></div></div>
 </div>
-<div class="step skipped">
+<div class="step passed">
   <div class="step-row">
-    <span class="stico skipped">○</span>
+    <span class="stico passed">✔</span>
     <span class="stkw">Then</span>
     <span class="sttxt">I should see additional update success message</span>
-    <span class="stdr perf-fast">⏱ 0µs</span>
+    <span class="stdr perf-fast">⏱ 108ms</span>
   </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:1%"></div></div>
 </div>
   </div>
 </div>
@@ -396,10 +389,10 @@ Command: [d17ff5ac2060f732b89e99b4d6c32a24, clickElement {id=f.B14D6F07FAB00ACB0
 </div>
 </section>
 </main>
-<footer><span>Test Report Generated On &nbsp;•&nbsp;08 Apr 2026, 22:24:26</span></footer>
+<footer><span>Test Report Generated On &nbsp;•&nbsp;08 Apr 2026, 23:52:33</span></footer>
 <script>
 const ctx=document.getElementById('donut').getContext('2d');
-new Chart(ctx,{type:'doughnut',data:{datasets:[{data:[0,1,0],backgroundColor:['#22c55e','#ef4444','#f59e0b'],borderColor:['#16a34a','#dc2626','#d97706'],borderWidth:2,hoverOffset:10}]},options:{cutout:'74%',plugins:{legend:{display:false}},animation:{animateScale:true,duration:900}}});
+new Chart(ctx,{type:'doughnut',data:{datasets:[{data:[1,0,0],backgroundColor:['#22c55e','#ef4444','#f59e0b'],borderColor:['#16a34a','#dc2626','#d97706'],borderWidth:2,hoverOffset:10}]},options:{cutout:'74%',plugins:{legend:{display:false}},animation:{animateScale:true,duration:900}}});
 
 var MOON_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>';
 var SUN_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';

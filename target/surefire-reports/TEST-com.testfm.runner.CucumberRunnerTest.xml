@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.testfm.runner.CucumberRunnerTest" time="15.664" tests="3" errors="0" skipped="2" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.testfm.runner.CucumberRunnerTest" time="69.125" tests="5" errors="0" skipped="4" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.8\bin"/>
-    <property name="sun.java.command" value="C:\Users\Thedr\AppData\Local\Temp\surefire9096306215450937842\surefirebooter-20260407132911333_3.jar C:\Users\Thedr\AppData\Local\Temp\surefire9096306215450937842 2026-04-07T13-29-11_211-jvmRun1 surefire-20260407132911333_1tmp surefire_0-20260407132911333_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Thedr\AppData\Local\Temp\surefire8084448404858954563\surefirebooter-20260408235123864_3.jar C:\Users\Thedr\AppData\Local\Temp\surefire8084448404858954563 2026-04-08T23-51-23_736-jvmRun1 surefire-20260408235123864_1tmp surefire_0-20260408235123864_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Thedr\Desktop\TestFM\target\test-classes;C:\Users\Thedr\Desktop\TestFM\target\classes;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-java\4.27.0\selenium-java-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-api\4.27.0\selenium-api-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\jspecify\jspecify\1.0.0\jspecify-1.0.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.27.0\selenium-chrome-driver-4.27.0.jar;C:\Users\Thedr\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.27.0\selenium-chromium-driver-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-json\4.27.0\selenium-json-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.27.0\selenium-manager-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v129\4.27.0\selenium-devtools-v129-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v130\4.27.0\selenium-devtools-v130-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v131\4.27.0\selenium-devtools-v131-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.27.0\selenium-devtools-v85-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.27.0\selenium-edge-driver-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.27.0\selenium-firefox-driver-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-http\4.27.0\selenium-http-4.27.0.jar;C:\Users\Thedr\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.27.0\selenium-ie-driver-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.27.0\selenium-remote-driver-4.27.0.jar;C:\Users\Thedr\.m2\repository\com\google\guava\guava\33.3.1-jre\guava-33.3.1-jre.jar;C:\Users\Thedr\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\Thedr\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\Thedr\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\Thedr\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar;C:\Users\Thedr\.m2\repository\com\google\errorprone\error_prone_annotations\2.28.0\error_prone_annotations-2.28.0.jar;C:\Users\Thedr\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-api\1.44.1\opentelemetry-api-1.44.1.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-context\1.44.1\opentelemetry-context-1.44.1.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.44.1\opentelemetry-exporter-logging-1.44.1.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.44.1\opentelemetry-sdk-common-1.44.1.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.44.1\opentelemetry-sdk-extension-autoconfigure-spi-1.44.1.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.44.1\opentelemetry-sdk-extension-autoconfigure-1.44.1.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.44.1-alpha\opentelemetry-api-incubator-1.44.1-alpha.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.44.1\opentelemetry-sdk-trace-1.44.1.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.44.1\opentelemetry-sdk-1.44.1.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.44.1\opentelemetry-sdk-metrics-1.44.1.jar;C:\Users\Thedr\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.44.1\opentelemetry-sdk-logs-1.44.1.jar;C:\Users\Thedr\.m2\repository\net\bytebuddy\byte-buddy\1.15.10\byte-buddy-1.15.10.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-os\4.27.0\selenium-os-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.27.0\selenium-safari-driver-4.27.0.jar;C:\Users\Thedr\.m2\repository\org\seleniumhq\selenium\selenium-support\4.27.0\selenium-support-4.27.0.jar;C:\Users\Thedr\.m2\repository\io\cucumber\cucumber-java\7.20.1\cucumber-java-7.20.1.jar;C:\Users\Thedr\.m2\repository\io\cucumber\cucumber-core\7.20.1\cucumber-core-7.20.1.jar;C:\Users\Thedr\.m2\repository\io\cucumber\cucumber-gherkin\7.20.1\cucumber-gherkin-7.20.1.jar;C:\Users\Thedr\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.20.1\cucumber-gherkin-messages-7.20.1.jar;C:\Users\Thedr\.m2\repository\io\cucumber\gherkin\28.0.0\gherkin-28.0.0.jar;C:\Users\Thedr\.m2\repository\io\cucumber\messages\24.1.0\messages-24.1.0.jar;C:\Users\Thedr\.m2\repository\io\cucumber\testng-xml-formatter\0.2.0\testng-xml-formatter-0.2.0.jar;C:\Users\Thedr\.m2\repository\io\cucumber\query\12.2.0\query-12.2.0.jar;C:\Users\Thedr\.m2\repository\io\cucumber\tag-expressions\6.1.0\tag-expressions-6.1.0.jar;C:\Users\Thedr\.m2\repository\io\cucumber\cucumber-expressions\17.1.0\cucumber-expressions-17.1.0.jar;C:\Users\Thedr\.m2\repository\io\cucumber\datatable\7.20.1\datatable-7.20.1.jar;C:\Users\Thedr\.m2\repository\io\cucumber\cucumber-plugin\7.20.1\cucumber-plugin-7.20.1.jar;C:\Users\Thedr\.m2\repository\io\cucumber\docstring\7.20.1\docstring-7.20.1.jar;C:\Users\Thedr\.m2\repository\io\cucumber\html-formatter\21.7.0\html-formatter-21.7.0.jar;C:\Users\Thedr\.m2\repository\io\cucumber\junit-xml-formatter\0.5.0\junit-xml-formatter-0.5.0.jar;C:\Users\Thedr\.m2\repository\io\cucumber\ci-environment\10.0.1\ci-environment-10.0.1.jar;C:\Users\Thedr\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Thedr\.m2\repository\io\cucumber\cucumber-junit-platform-engine\7.20.1\cucumber-junit-platform-engine-7.20.1.jar;C:\Users\Thedr\.m2\repository\org\junit\platform\junit-platform-engine\1.11.2\junit-platform-engine-1.11.2.jar;C:\Users\Thedr\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.1\junit-jupiter-api-5.10.1.jar;C:\Users\Thedr\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Thedr\.m2\repository\org\junit\platform\junit-platform-commons\1.10.1\junit-platform-commons-1.10.1.jar;C:\Users\Thedr\.m2\repository\org\junit\platform\junit-platform-suite\1.10.1\junit-platform-suite-1.10.1.jar;C:\Users\Thedr\.m2\repository\org\junit\platform\junit-platform-suite-api\1.10.1\junit-platform-suite-api-1.10.1.jar;C:\Users\Thedr\.m2\repository\org\junit\platform\junit-platform-suite-engine\1.10.1\junit-platform-suite-engine-1.10.1.jar;C:\Users\Thedr\.m2\repository\org\junit\platform\junit-platform-suite-commons\1.10.1\junit-platform-suite-commons-1.10.1.jar;C:\Users\Thedr\.m2\repository\org\junit\platform\junit-platform-launcher\1.10.1\junit-platform-launcher-1.10.1.jar;C:\Users\Thedr\.m2\repository\org\slf4j\slf4j-simple\2.0.9\slf4j-simple-2.0.9.jar;C:\Users\Thedr\.m2\repository\org\slf4j\slf4j-api\2.0.9\slf4j-api-2.0.9.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Thedr\AppData\Local\Temp\surefire9096306215450937842\surefirebooter-20260407132911333_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Thedr\AppData\Local\Temp\surefire8084448404858954563\surefirebooter-20260408235123864_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.8+12-LTS-250"/>
@@ -46,13 +46,13 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\Thedr\AppData\Local\Temp\"/>
     <property name="java.version" value="21.0.8"/>
-    <property name="cucumber.filter.tags" value="@Login"/>
+    <property name="cucumber.filter.tags" value="@updateAccount"/>
     <property name="user.dir" value="C:\Users\Thedr\Desktop\TestFM"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk-21.0.8\bin;C:\Python313\Scripts\;C:\Python313\;C:\Program Files\Eclipse Adoptium\jdk-8.0.452.9-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-21.0.8\bin;C:\Users\Thedr\Downloads\php-8.4.4-nts-Win32-vs17-x64;C:\Users\Thedr\Downloads\gradle-8.13-all.zip\gradle-8.13\bin;C:\ProgramData\chocolatey\bin;C:\Users\Thedr\Downloads\gradle-8.13-all\gradle-8.13\bin;C:\Redis-x64-3.0.504;C:\xamppp\php;C:\Program Files\MySQL\MySQL Server 9.3\bin;C:\Users\Thedr\AppData\Local\Android\Sdk\platform-tools;C:\Users\Thedr\AppData\Local\Android\Sdk;C:\Users\Thedr\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Users\Thedr\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Thedr\AppData\Local\Programs\Python\Python311\;C:\Users\Thedr\AppData\Local\pnpm;C:\Users\Thedr\scoop\shims;C:\Users\Thedr\AppData\Local\Microsoft\WindowsApps;C:\Users\Thedr\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thedr\AppData\Roaming\npm;C:\Users\Thedr\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\Thedr\Tools\apache-maven-3.9.5\bin;C:\Users\Thedr\AppData\Local\Programs\Antigravity\bin;C:\Users\Thedr\.dotnet\tools;C:\Users\Thedr\AppData\Local\Programs\cursor\resources\app\bin;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21.0.8\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Java\jdk-21.0.8\bin;C:\Python313\Scripts\;C:\Python313\;C:\Program Files\Eclipse Adoptium\jdk-8.0.452.9-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-21.0.8\bin;C:\Users\Thedr\Downloads\php-8.4.4-nts-Win32-vs17-x64;C:\Users\Thedr\Downloads\gradle-8.13-all.zip\gradle-8.13\bin;C:\ProgramData\chocolatey\bin;C:\Users\Thedr\Downloads\gradle-8.13-all\gradle-8.13\bin;C:\Redis-x64-3.0.504;C:\xamppp\php;C:\Program Files\MySQL\MySQL Server 9.3\bin;C:\Users\Thedr\AppData\Local\Android\Sdk\platform-tools;C:\Users\Thedr\AppData\Local\Android\Sdk;C:\Users\Thedr\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Users\Thedr\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\Thedr\AppData\Local\Programs\Python\Python311\;C:\Users\Thedr\AppData\Local\pnpm;C:\Users\Thedr\scoop\shims;C:\Users\Thedr\AppData\Local\Microsoft\WindowsApps;C:\Users\Thedr\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Thedr\AppData\Roaming\npm;C:\Users\Thedr\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\Thedr\Tools\apache-maven-3.9.5\bin;C:\Users\Thedr\AppData\Local\Programs\Antigravity\bin;C:\Users\Thedr\.dotnet\tools;C:\Users\Thedr\AppData\Local\Programs\cursor\resources\app\bin;c:\Users\Thedr\.cursor\extensions\vscjava.vscode-java-debug-0.58.5\bundled\scripts\noConfigScripts;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
@@ -61,19 +61,28 @@
     <property name="java.class.version" value="65.0"/>
   </properties>
   <testcase name="Search for Selenium on Google" classname="Google Search" time="0.0">
-    <skipped message="&apos;cucumber.filter.tags=@Login&apos; did not match this scenario"/>
+    <skipped message="&apos;cucumber.filter.tags=@updateAccount&apos; did not match this scenario"/>
   </testcase>
-  <testcase name="Example #1.1" classname="Examples" time="15.26">
+  <testcase name="Example #1.1" classname="Examples" time="0.0">
+    <skipped message="&apos;cucumber.filter.tags=@updateAccount&apos; did not match this scenario"/>
+  </testcase>
+  <testcase name="Example #1.2" classname="Examples" time="0.0">
+    <skipped message="&apos;cucumber.filter.tags=@updateAccount&apos; did not match this scenario"/>
+  </testcase>
+  <testcase name="Search fulltext and open Prepare Food project" classname="Search volunteer projects on New York Cares" time="0.0">
+    <skipped message="&apos;cucumber.filter.tags=@updateAccount&apos; did not match this scenario"/>
+  </testcase>
+  <testcase name="Update account interests, personal info, and additional details" classname="Update Account" time="68.65">
     <system-out><![CDATA[
-@Login
-Scenario Outline: Login attempts (multiple credentials)                        &amp#27;[90m# features/Login.feature:18&amp#27;[0m
+@updateAccount
+Scenario: Update account interests, personal info, and additional details      &amp#27;[90m# features/updateAccount.feature:8&amp#27;[0m
 
 ========================================
-[Hook] Starting Scenario: Login attempts (multiple credentials)
-[Hook] Tags: [@Login]
+[Hook] Starting Scenario: Update account interests, personal info, and additional details
+[Hook] Tags: [@updateAccount]
 ========================================
 [DriverManager] Edge WebDriver initialized.
-[LoginPage] Navigated to: https://nycares:Volunteer87@test-sfup.newyorkcares.org/user/login
+[LoginPage] Navigated to: https://nycares:teamleader26@test-sfup.newyorkcares.org/user/login
 [Step] Navigated to New York Cares login page.
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mI navigate to the New York Cares login page&amp#27;[0m                            &amp#27;[90m# com.testfm.steps.LoginSteps.iNavigateToTheNewYorkCaresLoginPage()&amp#27;[0m
 [LoginPage] Entered username: abel.wondwosen+test@newyorkcares.org
@@ -89,20 +98,45 @@ Scenario Outline: Login attempts (multiple credentials)                        &
 [Step] On dashboard: true
 [Step] Waited 15s after successful login.
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mI should be logged in successfully and redirected to the dashboard page&amp#27;[0m &amp#27;[90m# com.testfm.steps.LoginSteps.iShouldBeLoggedInAndRedirectedToTheDashboardPage()&amp#27;[0m
+[Step] Clicked Profile section.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI click Profile Section&amp#27;[0m                                                  &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iClickProfileSection()&amp#27;[0m
+[Step] Clicked My Account button.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI click My Account button&amp#27;[0m                                                &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iClickMyAccountButton()&amp#27;[0m
+[Step] Clicked Interests section.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI click Interests Section&amp#27;[0m                                                &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iClickInterestsSection()&amp#27;[0m
+[Step] Career Prep checked.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI check Career Prep&amp#27;[0m                                                      &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iCheckCareerPrep()&amp#27;[0m
+[Step] Clicked Save Interests button.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI click Save Interests button&amp#27;[0m                                            &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iClickSaveInterestsButton()&amp#27;[0m
+[Step] Verified Career Prep is checked.
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mCareer Prep should be checked&amp#27;[0m                                           &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.careerPrepShouldBeChecked()&amp#27;[0m
+[Step] Opened Personal section.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI go to Personal Section&amp#27;[0m                                                 &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iGoToPersonalSection()&amp#27;[0m
+[Step] Updated phone number to: 323-666-8755
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI update phone number to &amp#27;[0m&amp#27;[32m&amp#27;[1m"323-666-8755"&amp#27;[0m                                  &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iUpdatePhoneNumberTo(java.lang.String)&amp#27;[0m
+[Step] Clicked Save Update button in Personal section.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI click Save Update button in Personal Section&amp#27;[0m                           &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iClickSaveUpdateButtonInPersonalSection()&amp#27;[0m
+[Step] Personal update success message verified.
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mI should see personal update success message&amp#27;[0m                            &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iShouldSeePersonalUpdateSuccessMessage()&amp#27;[0m
+[Step] Opened Additional section.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI go to Additional Section&amp#27;[0m                                               &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iGoToAdditionalSection()&amp#27;[0m
+[Step] Selected Male gender.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI select Male gender&amp#27;[0m                                                     &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iSelectMaleGender()&amp#27;[0m
+[Step] Clicked Save Update button in Additional section.
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mI click Save Update button in Additional Section&amp#27;[0m                         &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iClickSaveUpdateButtonInAdditionalSection()&amp#27;[0m
+[Step] Additional update success message verified.
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mI should see additional update success message&amp#27;[0m                          &amp#27;[90m# com.testfm.steps.UpdateAccountSteps.iShouldSeeAdditionalUpdateSuccessMessage()&amp#27;[0m
 ========================================
-[Hook] Scenario: Login attempts (multiple credentials)
+[Hook] Scenario: Update account interests, personal info, and additional details
 [Hook] Status:   PASSED
 ========================================
 
 [DriverManager] Edge WebDriver quit.
 ]]></system-out>
-    <system-err><![CDATA[Apr 07, 2026 1:29:13 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[Apr 08, 2026 11:51:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 146
-Apr 07, 2026 1:29:13 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Apr 08, 2026 11:51:26 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 146.0.3856.97. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.27.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
-  </testcase>
-  <testcase name="Search fulltext and open Prepare Food project" classname="Search volunteer projects on New York Cares" time="0.0">
-    <skipped message="&apos;cucumber.filter.tags=@Login&apos; did not match this scenario"/>
   </testcase>
 </testsuite>

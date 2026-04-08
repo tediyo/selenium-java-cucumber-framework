@@ -22,7 +22,7 @@ public class LoginPage {
     private final By passwordField = By.xpath("//*[@id='edit-pass']");
     private final By loginButton   = By.xpath("//*[@id='edit-submit']");
 
-    private static final String LOGIN_URL     = "https://nycares:Volunteer87@test-sfup.newyorkcares.org/user/login";
+    private static final String LOGIN_URL     = "https://nycares:teamleader26@test-sfup.newyorkcares.org/user/login";
     private static final String DASHBOARD_URL = "https://www.newyorkcares.org/dashboard";
 
     public LoginPage(WebDriver driver) {

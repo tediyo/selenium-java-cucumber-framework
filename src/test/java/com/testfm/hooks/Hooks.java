@@ -2,6 +2,7 @@ package com.testfm.hooks;
 
 import com.testfm.driver.DriverManager;
 import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -11,6 +12,7 @@ import io.cucumber.java.Scenario;
  * Handles WebDriver initialization and teardown.
  */
 public class Hooks {
+    private static final long UPDATE_ACCOUNT_STEP_DELAY_MS = 2000;
 
     /**
      * Runs BEFORE every scenario.
@@ -37,5 +39,17 @@ public class Hooks {
         System.out.println("[Hook] Status:   " + scenario.getStatus());
         System.out.println("========================================\n");
         DriverManager.quitDriver();
+    }
+
+    /**
+     * Adds a short delay between steps only for @updateAccount scenarios.
+     */
+    @AfterStep("@updateAccount")
+    public void pauseAfterUpdateAccountStep() {
+        try {
+            Thread.sleep(UPDATE_ACCOUNT_STEP_DELAY_MS);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 }
