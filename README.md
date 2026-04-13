@@ -1,215 +1,151 @@
-# ⬡ TestFM — Selenium Cucumber BDD Framework
+# TestFM - Selenium Cucumber BDD Framework
 
-<div align="center">
+TestFM is a Java 21 test automation framework using Selenium WebDriver, Cucumber, and JUnit 5.
+It currently automates user journeys for Google Search and New York Cares flows (Login, Search Projects, Update Account) with custom HTML reporting.
 
-![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Selenium](https://img.shields.io/badge/Selenium-4.27-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
-![Cucumber](https://img.shields.io/badge/Cucumber-7.20-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)
-![JUnit5](https://img.shields.io/badge/JUnit-5.10-25A162?style=for-the-badge&logo=junit5&logoColor=white)
-![Maven](https://img.shields.io/badge/Maven-3.x-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
-![Edge](https://img.shields.io/badge/Edge-Browser-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white)
+## Overview
 
-**A production-grade BDD test automation framework** built with **Selenium WebDriver**, **Cucumber Gherkin**, and **JUnit 5**  
-Featuring a stunning custom HTML report with light/dark mode 🌙 ☀️
+- BDD style with `.feature` files under `src/test/resources/features`
+- Page Object Model under `src/main/java/com/testfm/pages`
+- JUnit Platform Cucumber suite runner in `src/test/java/com/testfm/runner/CucumberRunnerTest.java`
+- Hooks for driver lifecycle and scenario-level behavior in `src/test/java/com/testfm/hooks/Hooks.java`
+- Three report outputs: Cucumber HTML, Cucumber JSON, and a custom interactive report
 
-</div>
+## Tech Stack
 
----
+- Java 21
+- Maven 3.x
+- Selenium 4.27.0
+- Cucumber 7.20.1
+- JUnit Platform Suite 1.10.1 / JUnit 5.10.1
+- Microsoft Edge + local `msedgedriver.exe`
 
-## 📌 Overview
+## Project Structure
 
-TestFM is a clean, maintainable test automation framework following the **Behavior-Driven Development (BDD)** approach. It uses **Gherkin** feature files to define test scenarios in plain English, making them accessible to non-technical stakeholders while keeping the implementation robust for engineers.
-
-### ✨ Key Features
-
-- 🧪 **BDD with Cucumber** — Write tests in plain English using Gherkin syntax
-- 🌐 **Selenium WebDriver** — Browser automation with Microsoft Edge
-- 📄 **Page Object Model (POM)** — Clean separation of page interactions and test logic
-- 📊 **Custom HTML Report** — Interactive, self-contained report with donut charts, search, filters
-- 🌙 **Light / Dark Mode** — Toggle between themes with SVG icons and `localStorage` persistence
-- 🏷️ **Tag-based Filtering** — Run specific test subsets using Cucumber tags (`@smoke`, `@search`)
-- ⚡ **Step Performance Bars** — Visual indicators showing step execution speed (fast/medium/slow)
-- 🔍 **Scenario Search** — Real-time search through scenarios in the HTML report
-
----
-
-## 🏗️ Project Structure
-
-```
+```text
 TestFM/
 ├── drivers/
-│   └── msedgedriver.exe              # Local Edge WebDriver binary
+│   └── msedgedriver.exe
 ├── src/
 │   ├── main/java/com/testfm/
 │   │   ├── driver/
-│   │   │   └── DriverManager.java    # WebDriver lifecycle management
+│   │   │   └── DriverManager.java
 │   │   └── pages/
-│   │       └── GoogleSearchPage.java # Page Object for Google Search
+│   │       ├── GoogleSearchPage.java
+│   │       ├── LoginPage.java
+│   │       ├── SearchProjectsPage.java
+│   │       └── UpdateAccountPage.java
 │   └── test/
 │       ├── java/com/testfm/
-│       │   ├── hooks/
-│       │   │   └── Hooks.java        # @Before / @After scenario hooks
-│       │   ├── reporter/
-│       │   │   └── CustomHtmlReporter.java  # Custom Cucumber HTML reporter
-│       │   ├── runner/
-│       │   │   └── CucumberRunnerTest.java  # JUnit 5 Suite runner
+│       │   ├── hooks/Hooks.java
+│       │   ├── reporter/CustomHtmlReporter.java
+│       │   ├── runner/CucumberRunnerTest.java
 │       │   └── steps/
-│       │       └── GoogleSearchSteps.java   # Step definitions
+│       │       ├── GoogleSearchSteps.java
+│       │       ├── LoginSteps.java
+│       │       ├── SearchGoogleSteps.java
+│       │       └── UpdateAccountSteps.java
 │       └── resources/
 │           ├── features/
-│           │   └── GoogleSearch.feature     # Gherkin feature file
+│           │   ├── GoogleSearch.feature
+│           │   ├── Login.feature
+│           │   ├── SearchProjects.feature
+│           │   └── updateAccount.feature
 │           └── junit-platform.properties
 ├── target/
-│   ├── custom-reports/index.html     # ✨ Custom HTML report output
-│   ├── cucumber-reports/             # JSON + default HTML reports
-│   └── cucumber-html-reports/        # Masterthought report
 └── pom.xml
 ```
 
----
+## Prerequisites
 
-## 🛠️ Tech Stack
+- Java 21+ installed (`JAVA_HOME` configured)
+- Maven 3.x installed
+- Microsoft Edge installed
+- Edge WebDriver binary at `drivers/msedgedriver.exe` that matches your Edge version
 
-| Layer | Technology | Version |
-|:------|:-----------|:--------|
-| **Language** | Java (OpenJDK) | 21 |
-| **Build Tool** | Apache Maven | 3.x |
-| **Browser Automation** | Selenium WebDriver | 4.27.0 |
-| **BDD Framework** | Cucumber Java | 7.20.1 |
-| **Test Runner** | JUnit 5 Platform Suite | 5.10.1 |
-| **Browser** | Microsoft Edge | Latest |
-| **Reporting** | Custom HTML + Masterthought | 5.8.1 |
+WebDriver download:
+[Microsoft Edge WebDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)
 
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Java 21+** installed and `JAVA_HOME` set
-- **Maven 3.x+** installed
-- **Microsoft Edge** browser installed
-- **Edge WebDriver** (`msedgedriver.exe`) in the `drivers/` folder  
-  → Download from [Microsoft Edge WebDriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)  
-  → Match the version to your Edge browser version
-
-### Installation
+## Install
 
 ```bash
-# Clone the repository
-git clone https://github.com/tediyo/selenium-java-cucumber-framework.git
-cd selenium-java-cucumber-framework
-
-# Install dependencies
 mvn clean install -DskipTests
 ```
 
----
+## Run Tests
 
-## ▶️ Running Tests
+Run full suite:
 
-### Run all tests
 ```bash
 mvn clean verify
 ```
 
-### Run tests by tag
+Run specific tag:
+
 ```bash
-# Run only smoke tests
 mvn test -Dcucumber.filter.tags="@smoke"
-
-# Run only search tests
-mvn test -Dcucumber.filter.tags="@search"
-
-# Run multiple tags
-mvn test -Dcucumber.filter.tags="@smoke and @search"
+mvn test -Dcucumber.filter.tags="@searchProjects"
+mvn test -Dcucumber.filter.tags="@Login"
+mvn test -Dcucumber.filter.tags="@updateAccount"
 ```
 
-### Run in headless mode
-Uncomment the headless line in `DriverManager.java`:
+Run with tag expression:
+
+```bash
+mvn test -Dcucumber.filter.tags="@smoke and not @updateAccount"
+```
+
+### Headless Mode
+
+In `src/main/java/com/testfm/driver/DriverManager.java`, uncomment:
+
 ```java
 options.addArguments("--headless");
 ```
 
----
+## Current Features and Tags
 
-## 📊 Reports
+- `GoogleSearch.feature`: `@smoke @search`
+- `Login.feature`: `@Login`
+- `SearchProjects.feature`: `@searchProjects`
+- `updateAccount.feature`: `@updateAccount`
 
-After running tests, **three types of reports** are generated:
+## Reports
 
-| Report | Location | Description |
-|:-------|:---------|:------------|
-| **Custom HTML** | `target/custom-reports/index.html` | ⭐ Interactive report with charts, search, light/dark mode |
-| **Cucumber HTML** | `target/cucumber-reports/report.html` | Default Cucumber report |
-| **Masterthought** | `target/cucumber-html-reports/` | Detailed Masterthought report |
+After a run, reports are generated at:
 
-### Custom HTML Report Features
+- `target/cucumber-reports/report.html` (Cucumber HTML)
+- `target/cucumber-reports/report.json` (Cucumber JSON)
+- `target/cucumber-html-reports/` (Masterthought report)
+- `target/custom-reports/*_Report.html` (Custom interactive report, per feature)
 
-- 📈 **Donut chart** showing pass/fail/skip ratio
-- 🔍 **Live search** across all scenarios
-- 🏷️ **Tag-based filters** (e.g., `@smoke`, `@search`)
-- 🌙☀️ **Light / Dark mode toggle** with localStorage persistence
-- ⏱️ **Performance bars** per step (green = fast, amber = medium, red = slow)
-- 📋 **Expandable features & scenarios** with detailed step-by-step results
-- 🐛 **Error messages** displayed inline for failed steps
+Custom report includes:
 
----
+- pass/fail/skipped summary cards
+- donut chart pass rate
+- searchable scenarios
+- tag filters
+- step duration performance bars
+- inline error details
+- light/dark theme toggle
 
-## 📝 Writing New Tests
+## Notes
 
-### 1. Create a Feature File
+- The driver path is set explicitly in `DriverManager`:
+  `System.getProperty("user.dir") + "\\drivers\\msedgedriver.exe"`.
+- `Hooks` initializes and quits the browser for every scenario.
+- `@updateAccount` scenarios have an additional `@AfterStep` delay to improve stability.
 
-```gherkin
-# src/test/resources/features/MyFeature.feature
-Feature: My Feature
+## Security Reminder
 
-  @smoke
-  Scenario: My test scenario
-    Given I do something
-    When something happens
-    Then I should see the result
-```
-
-### 2. Create a Page Object
-
-```java
-// src/main/java/com/testfm/pages/MyPage.java
-public class MyPage {
-    private final WebDriver driver;
-    private final WebDriverWait wait;
-
-    public MyPage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-    }
-
-    // Add your page interactions here
-}
-```
-
-### 3. Create Step Definitions
-
-```java
-// src/test/java/com/testfm/steps/MySteps.java
-public class MySteps {
-    private final MyPage myPage;
-
-    public MySteps() {
-        this.myPage = new MyPage(DriverManager.getDriver());
-    }
-
-    @Given("I do something")
-    public void iDoSomething() {
-        // Implementation
-    }
-}
-```
+Some feature files currently include real-looking test credentials and URLs.
+For shared/public repositories, move credentials to environment variables or a secure secret manager before publishing.
 
 ---
 
-## 🏛️ Architecture
+## Architecture
 
-```
+```text
 ┌──────────────────────────────────────────────────────────┐
 │                    Feature Files (.feature)               │
 │              Written in Gherkin (plain English)           │
@@ -248,14 +184,12 @@ public class MySteps {
 
 ---
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
 <div align="center">
-
 Built with ☕ and 💜 by **TestFM**
-
 </div>
