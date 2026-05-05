@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Login Report</title>
+<title>Registeration Report</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -150,10 +150,10 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
 <body>
 <header>
   <div class="hi">
-    <div class="brand"><span class="bicon">⬡</span><span class="bname">Login</span><span class="bsub">Report</span></div>
+    <div class="brand"><span class="bicon">⬡</span><span class="bname">Registeration</span><span class="bsub">Report</span></div>
     <div class="hmeta">
-      <span class="obadge failed">FAILED</span>
-      <span class="rdate">🕒 15 Apr 2026, 21:51:55</span>
+      <span class="obadge passed">PASSED</span>
+      <span class="rdate">🕒 05 May 2026, 22:55:56</span>
       <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" title="Toggle theme">
         <span class="theme-btn-inner" id="themeBtnContent">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
@@ -165,21 +165,21 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
 </header>
 <main>
 <section class="summary">
-<div class="card sc sc-total"><div class="scn">2</div><div class="scl">Total</div></div>
+<div class="card sc sc-total"><div class="scn">1</div><div class="scl">Total</div></div>
 <div class="card sc sc-pass"><div class="scn">1</div><div class="scl">Passed</div></div>
-<div class="card sc sc-fail"><div class="scn">1</div><div class="scl">Failed</div></div>
+<div class="card sc sc-fail"><div class="scn">0</div><div class="scl">Failed</div></div>
 <div class="card sc sc-skip"><div class="scn">0</div><div class="scl">Skipped</div></div>
-<div class="card sc sc-dur"><div class="scn">48s</div><div class="scl">Duration</div></div>
+<div class="card sc sc-dur"><div class="scn">30s</div><div class="scl">Duration</div></div>
 </section>
 <section class="chartrow">
   <div class="card ccard">
     <div class="cwrap">
       <canvas id="donut" width="200" height="200"></canvas>
-      <div class="ccenter"><span class="cpct">50%</span><span class="clbl">Pass Rate</span></div>
+      <div class="ccenter"><span class="cpct">100%</span><span class="clbl">Pass Rate</span></div>
     </div>
     <div class="cleg">
       <span class="ldot ld-p"></span><span>Passed (1)</span>
-      <span class="ldot ld-f"></span><span>Failed (1)</span>
+      <span class="ldot ld-f"></span><span>Failed (0)</span>
       <span class="ldot ld-s"></span><span>Skipped (0)</span>
     </div>
   </div>
@@ -187,7 +187,8 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
 <section class="controls">
   <div class="sbox"><span class="sico">🔍</span><input id="qi" type="text" placeholder="Search scenarios…" oninput="applyFilters()"></div>
   <div class="tfilters"><button class="tbtn active" onclick="filterTag('all',this)">All</button>
-<button class="tbtn" onclick="filterTag('@Login',this)">@Login</button>
+<button class="tbtn" onclick="filterTag('@test',this)">@test</button>
+<button class="tbtn" onclick="filterTag('@RegisterationPage',this)">@RegisterationPage</button>
 </div>
 </section>
 <section class="features">
@@ -195,21 +196,20 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
   <div class="fh" onclick="toggleF(0)">
     <span class="ftog" id="ft0">▼</span>
     <span class="ficon">📋</span>
-    <span class="fname">Login</span>
+    <span class="fname">Registeration</span>
     <div class="fbadges">
       <span class="badge bpass">✔ 1</span>
-      <span class="badge bfail">✖ 1</span>
-      <span class="fst failed">FAILED</span>
+      <span class="fst passed">PASSED</span>
     </div>
   </div>
   <div class="sw" id="fw0">
-<div class="scenario" id="s0_0" data-tags="@Login" data-name="login attempts (multiple credentials)">
+<div class="scenario" id="s0_0" data-tags="@test,@RegisterationPage" data-name="register a new user successfully">
   <div class="sh" onclick="toggleS('s0_0')">
     <span class="stog" id="sts0_0">▶</span>
-    <span class="sico failed">✖</span>
-    <span class="sname">Login attempts (multiple credentials)</span>
-    <div class="smeta"><span class="stag">@Login</span>      <span class="sdur">⏱ 39.0s</span>
-      <span class="sst failed">FAILED</span>
+    <span class="sico passed">✔</span>
+    <span class="sname">Register a new user successfully</span>
+    <div class="smeta"><span class="stag">@test</span><span class="stag">@RegisterationPage</span>      <span class="sdur">⏱ 30.0s</span>
+      <span class="sst passed">PASSED</span>
     </div>
   </div>
   <div class="stepsw" id="sws0_0" style="display:none">
@@ -217,17 +217,17 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
   <div class="step-row">
     <span class="stico passed">✔</span>
     <span class="stkw">Given</span>
-    <span class="sttxt">I navigate to the New York Cares login page</span>
-    <span class="stdr perf-slow">⏱ 2.7s</span>
+    <span class="sttxt">I navigate to the New York Cares registration page</span>
+    <span class="stdr perf-slow">⏱ 6.9s</span>
   </div>
-  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:9%"></div></div>
+  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:35%"></div></div>
 </div>
 <div class="step passed">
   <div class="step-row">
     <span class="stico passed">✔</span>
     <span class="stkw">When</span>
-    <span class="sttxt">I enter the username &quot;abel.wondwosen+test@newyorkcares.org&quot;</span>
-    <span class="stdr perf-fast">⏱ 420ms</span>
+    <span class="sttxt">I enter a first name</span>
+    <span class="stdr perf-fast">⏱ 253ms</span>
   </div>
   <div class="stbar-wrap"><div class="stbar perf-fast" style="width:1%"></div></div>
 </div>
@@ -235,8 +235,44 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
   <div class="step-row">
     <span class="stico passed">✔</span>
     <span class="stkw">And</span>
-    <span class="sttxt">I enter the password &quot;12345678&quot;</span>
-    <span class="stdr perf-fast">⏱ 131ms</span>
+    <span class="sttxt">I enter a last name</span>
+    <span class="stdr perf-fast">⏱ 232ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:1%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I enter a phone number</span>
+    <span class="stdr perf-fast">⏱ 220ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:1%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I enter a unique email</span>
+    <span class="stdr perf-fast">⏱ 286ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:1%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I enter a password and confirm it</span>
+    <span class="stdr perf-fast">⏱ 339ms</span>
+  </div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:1%"></div></div>
+</div>
+<div class="step passed">
+  <div class="step-row">
+    <span class="stico passed">✔</span>
+    <span class="stkw">And</span>
+    <span class="sttxt">I check the over 18 checkbox</span>
+    <span class="stdr perf-fast">⏱ 162ms</span>
   </div>
   <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
 </div>
@@ -244,66 +280,17 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
   <div class="step-row">
     <span class="stico passed">✔</span>
     <span class="stkw">And</span>
-    <span class="sttxt">I click the Login button</span>
-    <span class="stdr perf-slow">⏱ 3.7s</span>
+    <span class="sttxt">I solve the math captcha</span>
+    <span class="stdr perf-fast">⏱ 253ms</span>
   </div>
-  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:12%"></div></div>
-</div>
-<div class="step failed">
-  <div class="step-row">
-    <span class="stico failed">✖</span>
-    <span class="stkw">Then</span>
-    <span class="sttxt">I should be logged in successfully and redirected to the dashboard page</span>
-    <span class="stdr perf-slow">⏱ 30.2s</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:100%"></div></div>
-  <div class="sterr"><pre>Login FAILED — Expected to land on /dashboard but current URL is: https://nycares:teamleader26@test-sfup.newyorkcares.org/user/login ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;</pre></div>
-</div>
-  </div>
-</div>
-<div class="scenario" id="s0_1" data-tags="@Login" data-name="login attempts (multiple credentials)">
-  <div class="sh" onclick="toggleS('s0_1')">
-    <span class="stog" id="sts0_1">▶</span>
-    <span class="sico passed">✔</span>
-    <span class="sname">Login attempts (multiple credentials)</span>
-    <div class="smeta"><span class="stag">@Login</span>      <span class="sdur">⏱ 8.9s</span>
-      <span class="sst passed">PASSED</span>
-    </div>
-  </div>
-  <div class="stepsw" id="sws0_1" style="display:none">
-<div class="step passed">
-  <div class="step-row">
-    <span class="stico passed">✔</span>
-    <span class="stkw">Given</span>
-    <span class="sttxt">I navigate to the New York Cares login page</span>
-    <span class="stdr perf-slow">⏱ 2.8s</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-slow" style="width:83%"></div></div>
-</div>
-<div class="step passed">
-  <div class="step-row">
-    <span class="stico passed">✔</span>
-    <span class="stkw">When</span>
-    <span class="sttxt">I enter the username &quot;abel.wondwosen+test@newyorkcares.org&quot;</span>
-    <span class="stdr perf-fast">⏱ 344ms</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:10%"></div></div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:1%"></div></div>
 </div>
 <div class="step passed">
   <div class="step-row">
     <span class="stico passed">✔</span>
     <span class="stkw">And</span>
-    <span class="sttxt">I enter the password &quot;Habesha#12&quot;</span>
-    <span class="stdr perf-fast">⏱ 180ms</span>
-  </div>
-  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:5%"></div></div>
-</div>
-<div class="step passed">
-  <div class="step-row">
-    <span class="stico passed">✔</span>
-    <span class="stkw">And</span>
-    <span class="sttxt">I click the Login button</span>
-    <span class="stdr perf-slow">⏱ 3.4s</span>
+    <span class="sttxt">I click the Register button</span>
+    <span class="stdr perf-slow">⏱ 19.8s</span>
   </div>
   <div class="stbar-wrap"><div class="stbar perf-slow" style="width:100%"></div></div>
 </div>
@@ -311,10 +298,10 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
   <div class="step-row">
     <span class="stico passed">✔</span>
     <span class="stkw">Then</span>
-    <span class="sttxt">I should be logged in successfully and redirected to the dashboard page</span>
-    <span class="stdr perf-med">⏱ 1.1s</span>
+    <span class="sttxt">I should be redirected to the orientation page</span>
+    <span class="stdr perf-fast">⏱ 57ms</span>
   </div>
-  <div class="stbar-wrap"><div class="stbar perf-med" style="width:31%"></div></div>
+  <div class="stbar-wrap"><div class="stbar perf-fast" style="width:0%"></div></div>
 </div>
   </div>
 </div>
@@ -322,10 +309,10 @@ footer{text-align:center;padding:20px;font-size:12px;color:var(--footer-txt);bor
 </div>
 </section>
 </main>
-<footer><span>Test Report Generated On &nbsp;•&nbsp;15 Apr 2026, 21:51:55</span></footer>
+<footer><span>Test Report Generated On &nbsp;•&nbsp;05 May 2026, 22:55:56</span></footer>
 <script>
 const ctx=document.getElementById('donut').getContext('2d');
-new Chart(ctx,{type:'doughnut',data:{datasets:[{data:[1,1,0],backgroundColor:['#22c55e','#ef4444','#f59e0b'],borderColor:['#16a34a','#dc2626','#d97706'],borderWidth:2,hoverOffset:10}]},options:{cutout:'74%',plugins:{legend:{display:false}},animation:{animateScale:true,duration:900}}});
+new Chart(ctx,{type:'doughnut',data:{datasets:[{data:[1,0,0],backgroundColor:['#22c55e','#ef4444','#f59e0b'],borderColor:['#16a34a','#dc2626','#d97706'],borderWidth:2,hoverOffset:10}]},options:{cutout:'74%',plugins:{legend:{display:false}},animation:{animateScale:true,duration:900}}});
 
 var MOON_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>';
 var SUN_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>';

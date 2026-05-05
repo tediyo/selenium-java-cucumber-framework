@@ -1,2 +1,9 @@
+com\testfm\pages\SearchProjectsPage.class
+com\testfm\pages\UpdateAccountPage.class
 com\testfm\driver\DriverManager.class
 com\testfm\pages\GoogleSearchPage.class
+com\testfm\pages\HelpCenterPage.class
+com\testfm\pages\LoginPage.class
+com\testfm\pages\YouthFriendlyPage.class
+com\testfm\pages\ProjectResourcePage.class
+com\testfm\pages\RegisterationPage.class
