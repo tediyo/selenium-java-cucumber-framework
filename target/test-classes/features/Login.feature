@@ -14,9 +14,10 @@ Feature: New York Cares Login
 
     Examples:
       | username                          | password     |
-      #| abel.wondwosen+test@newyorkcares.org | 12345678    |
+      | abel.wondwosen+test@newyorkcares.org | 12345678    |
       | abel.wondwosen+test@newyorkcares.org | Habesha#12  |
       #| wrong.user@newyorkcares.org       | WrongPass!1  |
       #| test.user+1@newyorkcares.org      | Habesha#12   |
       #| not-an-email                      | Habesha#12   |
+
 

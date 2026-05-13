@@ -1,7 +1,9 @@
 package com.testfm.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,8 +24,7 @@ public class LoginPage {
     private final By passwordField = By.xpath("//*[@id='edit-pass']");
     private final By loginButton   = By.xpath("//*[@id='edit-submit']");
 
-    private static final String LOGIN_URL     = "https://nycares:Volunteer87@test-sfup.newyorkcares.org/user/login";
-    private static final String DASHBOARD_URL = "https://www.newyorkcares.org/dashboard";
+    private static final String LOGIN_URL     = "https://nycares:teamleader26@test-sfup.newyorkcares.org/user/login";
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -62,9 +63,19 @@ public class LoginPage {
      * Click the login/submit button.
      */
     public void clickLoginButton() {
-        WebElement button = wait.until(ExpectedConditions.elementToBeClickable(loginButton));
-        button.click();
-        System.out.println("[LoginPage] Clicked the Login button.");
+        WebElement button = wait.until(ExpectedConditions.presenceOfElementLocated(loginButton));
+
+        try {
+            wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
+            System.out.println("[LoginPage] Clicked the Login button.");
+            return;
+        } catch (WebDriverException firstClickError) {
+            System.out.println("[LoginPage] Standard click failed, retrying with JS click.");
+        }
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", button);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", button);
+        System.out.println("[LoginPage] Clicked the Login button via JS fallback.");
     }
 
     /**
